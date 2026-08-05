@@ -156,19 +156,49 @@ img { display: block; width: 100%; }
 
 .offices { background: var(--paper); }
 .office-heading { margin-bottom: 54px; }
-.office-grid { max-width: 1380px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
-.office-card { min-height: 350px; padding: 30px; display: flex; flex-direction: column; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); transition: background .25s, color .25s; }
-.office-card:hover { background: var(--ink); color: white; }
-.office-top { display: flex; justify-content: space-between; align-items: center; }
-.office-top > span { color: var(--red); font: 400 16px var(--serif); }
-.office-top p { margin: 0; color: var(--muted); font-size: 10px; letter-spacing: .08em; }
-.office-card h3 { margin: 48px 0 18px; font: 600 31px var(--serif); }
-.office-card h3 small { margin-left: 5px; color: var(--muted); font: 400 12px var(--sans); }
-.office-card address { min-height: 72px; color: var(--muted); font-size: 12px; font-style: normal; line-height: 1.75; }
-.office-contact { margin-top: auto; padding-top: 18px; border-top: 1px solid var(--line); display: flex; flex-direction: column; gap: 7px; font-size: 11px; }
-.office-contact span { color: var(--muted); }
-.office-contact a:last-child { color: var(--red); overflow-wrap: anywhere; }
-.office-card:hover .office-top p, .office-card:hover h3 small, .office-card:hover address, .office-card:hover .office-contact span { color: rgba(255,255,255,.55); }
+.office-heading-side { align-self: end; }
+.office-heading-side > p { margin: 0 0 25px; color: var(--muted); font-size: 14px; line-height: 1.85; }
+.office-carousel-controls { display: flex; align-items: center; justify-content: flex-end; gap: 8px; }
+.office-carousel-controls p { margin: 0 auto 0 0; display: flex; align-items: baseline; gap: 6px; }
+.office-carousel-controls p strong { color: var(--red); font: 400 26px var(--serif); }
+.office-carousel-controls p span { color: #9aa3ad; font-size: 11px; }
+.office-carousel-controls > button { width: 44px; height: 44px; padding: 0; border: 1px solid var(--line); color: var(--ink); background: transparent; font-size: 18px; cursor: pointer; transition: .22s; }
+.office-carousel-controls > button:hover { border-color: var(--ink); color: white; background: var(--ink); }
+.office-carousel { max-width: 1380px; margin: 0 auto; }
+.office-carousel-viewport { overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; outline: none; }
+.office-carousel-viewport::-webkit-scrollbar { display: none; }
+.office-carousel-viewport:focus-visible { outline: 2px solid rgba(213,68,50,.55); outline-offset: 5px; }
+.office-carousel-track { display: flex; gap: 20px; padding-bottom: 18px; }
+.office-slide { flex: 0 0 calc((100% - 40px) / 3); min-width: 0; scroll-snap-align: start; border: 1px solid var(--line); background: white; transition: transform .35s, box-shadow .35s, border-color .35s; }
+.office-slide.is-active { border-color: rgba(213,68,50,.35); box-shadow: 0 25px 55px rgba(16,35,63,.12); transform: translateY(-6px); }
+.office-slide-image { position: relative; height: 265px; overflow: hidden; color: white; background: var(--ink-deep); }
+.office-slide-image > img { width: 100%; height: 100%; object-fit: cover; filter: saturate(.78) contrast(1.05); transition: transform .65s ease, filter .4s; }
+.office-slide:hover .office-slide-image > img, .office-slide.is-active .office-slide-image > img { transform: scale(1.055); filter: saturate(.95) contrast(1.02); }
+.office-slide-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(4,17,31,.06) 28%, rgba(4,17,31,.84) 100%); }
+.office-slide-label { position: absolute; top: 18px; left: 18px; right: 18px; display: flex; justify-content: space-between; align-items: center; }
+.office-slide-label span { padding: 7px 10px; border: 1px solid rgba(255,255,255,.38); background: rgba(5,20,35,.26); backdrop-filter: blur(8px); font-size: 8px; font-weight: 700; letter-spacing: .18em; }
+.office-slide-label strong { font: 400 20px var(--serif); }
+.office-slide-title { position: absolute; left: 24px; right: 24px; bottom: 22px; }
+.office-slide-title p { margin: 0 0 8px; color: rgba(255,255,255,.66); font-size: 10px; letter-spacing: .08em; }
+.office-slide-title h3 { margin: 0; font: 600 31px var(--serif); }
+.office-slide-title h3 small { margin-left: 7px; color: rgba(255,255,255,.7); font: 400 11px var(--sans); }
+.office-slide-placeholder { background: radial-gradient(circle at 76% 24%, rgba(213,68,50,.38), transparent 28%), linear-gradient(135deg, #07182e, #183a58); }
+.office-slide-placeholder::before { content: ""; position: absolute; inset: 0; opacity: .16; background-image: linear-gradient(rgba(255,255,255,.25) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.25) 1px, transparent 1px); background-size: 40px 40px; }
+.office-city-mark { position: absolute; inset: 0; display: grid; place-content: center; text-align: center; transform: rotate(-5deg); }
+.office-city-mark span { color: rgba(255,255,255,.12); font: 700 clamp(38px, 4vw, 58px)/1 var(--sans); letter-spacing: .05em; }
+.office-city-mark i { margin-top: 8px; color: #f0b0a4; font: normal 500 20px var(--serif); letter-spacing: .35em; }
+.office-slide-body { min-height: 225px; padding: 25px 24px 27px; display: flex; flex-direction: column; }
+.office-slide-body address { min-height: 62px; color: var(--muted); font-size: 11px; font-style: normal; line-height: 1.75; }
+.office-slide-contact { margin-top: auto; padding-top: 17px; border-top: 1px solid var(--line); display: grid; gap: 8px; }
+.office-slide-contact a { display: flex; gap: 13px; align-items: baseline; font-size: 11px; overflow-wrap: anywhere; }
+.office-slide-contact a span { width: 26px; flex: 0 0 auto; color: #9ba3ad; font-size: 9px; }
+.office-slide-contact a:last-child { color: var(--red); }
+.office-slide-contact p { margin: 0 0 0 39px; color: var(--muted); font-size: 9px; }
+.office-carousel-progress { margin-top: 26px; display: flex; gap: 7px; }
+.office-carousel-progress button { position: relative; height: 18px; flex: 1; padding: 0; border: 0; background: transparent; cursor: pointer; }
+.office-carousel-progress button::before { content: ""; position: absolute; left: 0; right: 0; top: 8px; height: 1px; background: var(--line); }
+.office-carousel-progress button span { position: absolute; z-index: 1; left: 0; top: 7px; width: 0; height: 3px; background: var(--red); transition: width .35s; }
+.office-carousel-progress button.is-active span { width: 100%; }
 
 .final-cta { min-height: 420px; padding: 90px max(9vw, 70px); display: flex; justify-content: space-between; align-items: center; gap: 40px; color: white; background: var(--red); }
 .final-cta > a { width: 190px; height: 190px; flex: 0 0 auto; padding: 25px; border: 1px solid rgba(255,255,255,.55); border-radius: 50%; display: flex; justify-content: space-between; align-items: center; transition: .3s; }
@@ -214,7 +244,7 @@ footer > small { grid-column: 1 / -1; color: rgba(255,255,255,.32); font-size: 1
   .network { grid-template-columns: 1fr; }
   .network-intro { max-width: 700px; }
   .network-image-shell { height: 520px; }
-  .office-grid { grid-template-columns: repeat(2, 1fr); }
+  .office-slide { flex-basis: calc((100% - 20px) / 2); }
 }
 
 @media (max-width: 700px) {
@@ -247,8 +277,13 @@ footer > small { grid-column: 1 / -1; color: rgba(255,255,255,.32); font-size: 1
   .network-image-shell img { object-position: center; transform: scale(1.05); }
   .network-chip-top { top: 0; right: 8px; }
   .network-chip-bottom { right: -4px; }
-  .office-grid { grid-template-columns: 1fr; }
-  .office-card { min-height: 320px; }
+  .office-heading-side { display: grid; gap: 15px; }
+  .office-carousel-controls { justify-content: flex-start; }
+  .office-carousel-track { gap: 14px; }
+  .office-slide { flex-basis: 88%; }
+  .office-slide-image { height: 230px; }
+  .office-slide-body { min-height: 220px; }
+  .office-carousel-progress button:nth-child(n+6) { display: none; }
   .final-cta { min-height: 520px; padding: 76px 24px; flex-direction: column; align-items: flex-start; }
   .final-cta > a { width: 150px; height: 150px; align-self: flex-end; }
   footer { padding: 52px 24px 28px; grid-template-columns: 1fr; }

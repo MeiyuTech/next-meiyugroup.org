@@ -4,7 +4,19 @@
 
 import { useEffect, useRef, useState } from "react";
 
-const offices = [
+type Office = {
+  city: string;
+  english: string;
+  region: string;
+  country: string;
+  image?: string;
+  phone: string;
+  direct?: string;
+  email: string;
+  address: string;
+};
+
+const officeDirectory: Office[] = [
   {
     city: "迈阿密",
     english: "MIAMI",
@@ -90,6 +102,8 @@ const offices = [
     address: "江苏常州新北区现代传媒中心3号楼1802",
   },
 ];
+
+const offices = officeDirectory.filter((office) => office.city !== "纽约");
 
 export function OfficeCarousel() {
   const [active, setActive] = useState(0);

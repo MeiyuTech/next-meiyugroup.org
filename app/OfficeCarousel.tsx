@@ -73,6 +73,7 @@ const offices = [
     english: "CHENGDU",
     region: "西南服务中心",
     country: "CHINA",
+    image: "/offices/chengdu.jpg",
     phone: "+86 028 63916918",
     email: "chengdu@usyimin.com",
     address: "四川成都锦江区东大街芷泉段68号时代8号3609室",

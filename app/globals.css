@@ -118,7 +118,7 @@ img { display: block; width: 100%; }
 .hero-note strong { color: var(--ink); font-family: var(--serif); font-size: 16px; }
 .note-icon { color: var(--red); font-size: 22px; }
 
-.trust-strip { min-height: 84px; padding: 18px 4vw; display: flex; justify-content: center; align-items: center; gap: 3.5vw; background: var(--red); color: white; font: 500 clamp(14px, 1.2vw, 18px)/1 var(--serif); letter-spacing: .08em; }
+.trust-strip { min-height: 84px; padding: 18px 3vw; display: flex; justify-content: center; align-items: center; gap: clamp(18px, 2.2vw, 38px); background: var(--red); color: white; font: 500 clamp(13px, 1.05vw, 17px)/1 var(--serif); letter-spacing: .08em; }
 .trust-strip i { font-style: normal; opacity: .58; font-size: 11px; }
 .section { padding: 130px max(6vw, 50px); }
 .section-heading { max-width: 1380px; margin: 0 auto 70px; display: grid; grid-template-columns: 1.3fr .7fr; align-items: end; gap: 80px; }
@@ -126,7 +126,7 @@ img { display: block; width: 100%; }
 .section-heading > p { margin: 0 0 8px; color: var(--muted); font-size: 15px; line-height: 1.9; }
 
 .services { background: var(--cream); }
-.service-grid { max-width: 1380px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.service-grid { max-width: 1380px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
 .service-card { position: relative; min-width: 0; background: var(--paper); transition: transform .3s ease, box-shadow .3s ease; }
 .service-card:hover { transform: translateY(-8px); box-shadow: 0 24px 54px rgba(24,41,63,.12); }
 .service-image { position: relative; height: 235px; overflow: hidden; background: #dce8eb; }

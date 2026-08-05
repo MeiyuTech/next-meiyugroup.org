@@ -37,20 +37,36 @@ const services = [
     alt: "人群跨越地球前往美国的移民主题插画",
   },
   {
-    name: "亚洲人体冷冻",
-    eyebrow: "CRYONICS",
-    description: "穿越时光，遇见未来的自己",
-    image: "/images/cryonics.png",
-    href: "http://www.chinesecryonics.org/cn/index.html",
-    alt: "人体冷冻服务英文主题画面",
+    name: "资产配置",
+    eyebrow: "ASSET ALLOCATION",
+    description: "跨境视角，规划家庭财富的长期配置",
+    image: "/services/asset-allocation.webp",
+    href: "#contact",
+    alt: "世界地图、投资组合图表与指南针组成的资产配置场景",
   },
   {
-    name: "赴美医疗",
-    eyebrow: "MEDICAL",
-    description: "专注全球领先的新理念、新技术和新药物",
-    image: "/images/medical.png",
-    href: "http://www.huajianus.com/",
-    alt: "医疗实验室与美国食品药品监督管理局标志",
+    name: "购房置业",
+    eyebrow: "REAL ESTATE",
+    description: "从选房到安家，提供专业置业支持",
+    image: "/services/home-purchase.webp",
+    href: "#contact",
+    alt: "现代住宅、房产资料与钥匙组成的美国置业场景",
+  },
+  {
+    name: "税务申报",
+    eyebrow: "TAX SERVICES",
+    description: "中美税务规划与申报，清晰合规更安心",
+    image: "/services/tax-filing.webp",
+    href: "#contact",
+    alt: "计算器、申报表与钢笔组成的专业税务申报场景",
+  },
+  {
+    name: "投资机遇",
+    eyebrow: "INVESTMENT",
+    description: "甄选美国优质项目，链接长期增长机遇",
+    image: "/services/investment-opportunities.webp",
+    href: "#contact",
+    alt: "城市模型与通向未来的光线组成的投资机遇场景",
   },
 ];
 
@@ -87,7 +103,7 @@ export default function Home() {
             <a className="button button-ghost" href="#contact">找到附近办公室</a>
           </div>
           <div className="hero-proof" aria-label="服务概览">
-            <div><strong>6</strong><span>专业业务板块</span></div>
+            <div><strong>8</strong><span>专业业务板块</span></div>
             <div><strong>8</strong><span>中美办公室</span></div>
             <div><strong>2</strong><span>国家服务网络</span></div>
           </div>
@@ -108,7 +124,7 @@ export default function Home() {
       </section>
 
       <section className="trust-strip" aria-label="服务关键词">
-        <span>教育规划</span><i>✦</i><span>认证翻译</span><i>✦</i><span>移民咨询</span><i>✦</i><span>赴美生活</span><i>✦</i><span>医疗服务</span>
+        <span>教育规划</span><i>✦</i><span>认证翻译</span><i>✦</i><span>移民咨询</span><i>✦</i><span>资产配置</span><i>✦</i><span>购房置业</span><i>✦</i><span>税务申报</span><i>✦</i><span>投资机遇</span>
       </section>
 
       <section className="services section" id="services">
@@ -117,12 +133,18 @@ export default function Home() {
             <p className="kicker"><span /> 集团业务</p>
             <h2>一个入口，连接<br />赴美生活的每一步</h2>
           </div>
-          <p>六大专业板块协同服务，从最初的想法到在美国安家生活，让复杂的跨境事务变得更简单。</p>
+          <p>八大专业板块协同服务，从最初的想法到在美国安家与发展，让复杂的跨境事务变得更简单。</p>
         </div>
 
         <div className="service-grid">
           {services.map((service, index) => (
-            <a className="service-card" href={service.href} target="_blank" rel="noreferrer" key={service.name}>
+            <a
+              className="service-card"
+              href={service.href}
+              target={service.href.startsWith("http") ? "_blank" : undefined}
+              rel={service.href.startsWith("http") ? "noreferrer" : undefined}
+              key={service.name}
+            >
               <div className="service-image">
                 <img src={service.image} alt={service.alt} loading={index > 2 ? "lazy" : "eager"} />
                 <span className="service-number">0{index + 1}</span>

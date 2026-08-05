@@ -25,7 +25,7 @@ const offices = [
     phone: "+1 949 954 7996",
     direct: "中国直拨美国：167 6208 4336",
     email: "ca2@aet21.com",
-    address: "19800 MacArthur Blvd Ste 420, Irvine, CA 92612",
+    address: "19800 MacArthur Blvd Ste 570, Irvine, CA 92612",
   },
   {
     city: "旧金山",

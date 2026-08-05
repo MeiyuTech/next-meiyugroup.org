@@ -70,7 +70,6 @@ export default function Home() {
           <a href="#network">服务网络</a>
           <a href="#contact">联系我们</a>
         </nav>
-        <a className="header-cta" href="mailto:info@aet21.com">开始咨询 <span>↗</span></a>
       </header>
 
       <section className="hero" id="top">
@@ -96,10 +95,10 @@ export default function Home() {
 
         <div className="hero-visual" aria-label="美域集团服务场景">
           <div className="hero-image hero-image-main">
-            <img src="/images/onestop.png" alt="地球仪与美国国旗" />
+            <img src="/golden-gate-bridge-view.jpg" alt="金门大桥与旧金山湾景色" />
           </div>
           <div className="hero-image hero-image-small">
-            <img src="/images/trans.png" alt="专业翻译工作场景" />
+            <img src="/sf-chinatown.webp" alt="旧金山唐人街街景与红灯笼" />
           </div>
           <div className="hero-note">
             <span className="note-icon">✦</span>
@@ -163,9 +162,6 @@ export default function Home() {
           <p className="kicker kicker-light"><span /> LET&apos;S TALK</p>
           <h2>准备好开启您的<br />美国生活新篇章？</h2>
         </div>
-        <a href="mailto:info@aet21.com" aria-label="发送邮件开始咨询">
-          <span>开始咨询</span><b>↗</b>
-        </a>
       </section>
 
       <footer>

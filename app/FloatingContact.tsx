@@ -39,7 +39,6 @@ export function FloatingContact() {
         aria-expanded={open}
         aria-controls="wechat-panel"
       >
-        <span className="wechat-trigger-icon" aria-hidden="true">微</span>
         <span className="wechat-trigger-copy"><strong>微信咨询</strong><small>扫码联系顾问</small></span>
         <i aria-hidden="true" />
       </button>

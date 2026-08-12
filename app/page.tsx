@@ -93,7 +93,11 @@ export default function Home() {
         <div className="hero-orbit hero-orbit-two" />
         <div className="hero-copy">
           <p className="kicker"><span /> 专业赴美服务平台</p>
-          <h1>让美好的<br />美国生活，<em>始于美域</em></h1>
+          <h1>
+            <span>让美好的</span>
+            <span>美国生活，</span>
+            <em>始于美域</em>
+          </h1>
           <p className="hero-lead">
             从教育、翻译到移民与生活服务，我们连接中美资源，
             为每一个重要决定提供专业、清晰的支持。

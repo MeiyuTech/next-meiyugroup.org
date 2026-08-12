@@ -39,33 +39,29 @@ const services = [
   {
     name: "资产配置",
     eyebrow: "ASSET ALLOCATION",
-    description: "跨境视角，规划家庭财富的长期配置",
+    description: "围绕客户的家庭结构、财务状况、保障需求与长期目标，提供涵盖保险规划、财富保障及风险管理的定制化方案，帮助客户优化资产结构，提升家庭财务的稳健性与抗风险能力。",
     image: "/services/asset-allocation.webp",
-    href: "#contact",
     alt: "世界地图、投资组合图表与指南针组成的资产配置场景",
   },
   {
     name: "购房置业",
     eyebrow: "REAL ESTATE",
-    description: "从选房到安家，提供专业置业支持",
+    description: "根据客户的居住需求、投资目标与预算范围，提供房源筛选、市场分析、贷款方案比较及购房流程支持，协助客户更高效地做出理性、合适的置业决策。",
     image: "/services/home-purchase.webp",
-    href: "#contact",
     alt: "现代住宅、房产资料与钥匙组成的美国置业场景",
   },
   {
     name: "税务申报",
     eyebrow: "TAX SERVICES",
-    description: "中美税务规划与申报，清晰合规更安心",
+    description: "依托自有会计师事务所，为个人、家庭及企业客户提供专业的税务申报、税务咨询与合规服务，帮助客户准确履行申报义务，并在合法合规的前提下优化税务安排。",
     image: "/services/tax-filing.webp",
-    href: "#contact",
     alt: "计算器、申报表与钢笔组成的专业税务申报场景",
   },
   {
     name: "投资机遇",
     eyebrow: "INVESTMENT",
-    description: "甄选美国优质项目，链接长期增长机遇",
+    description: "立足美国本土市场，持续筛选具有发展潜力和长期价值的优质投资项目，并结合客户的风险承受能力与投资目标，提供专业的项目分析与机会对接服务。",
     image: "/services/investment-opportunities.webp",
-    href: "#contact",
     alt: "城市模型与通向未来的光线组成的投资机遇场景",
   },
 ];
@@ -141,14 +137,9 @@ export default function Home() {
         </div>
 
         <div className="service-grid">
-          {services.map((service, index) => (
-            <a
-              className="service-card"
-              href={service.href}
-              target={service.href.startsWith("http") ? "_blank" : undefined}
-              rel={service.href.startsWith("http") ? "noreferrer" : undefined}
-              key={service.name}
-            >
+          {services.map((service, index) => {
+            const cardContent = (
+              <>
               <div className="service-image">
                 <img src={service.image} alt={service.alt} loading={index > 2 ? "lazy" : "eager"} />
                 <span className="service-number">0{index + 1}</span>
@@ -157,10 +148,27 @@ export default function Home() {
                 <span className="service-eyebrow">{service.eyebrow}</span>
                 <h3>{service.name}</h3>
                 <p>{service.description}</p>
-                <span className="service-link">了解更多 <b>↗</b></span>
+                {service.href && <span className="service-link">了解更多 <b>↗</b></span>}
               </div>
-            </a>
-          ))}
+              </>
+            );
+
+            return service.href ? (
+              <a
+                className="service-card"
+                href={service.href}
+                target={service.href.startsWith("http") ? "_blank" : undefined}
+                rel={service.href.startsWith("http") ? "noreferrer" : undefined}
+                key={service.name}
+              >
+                {cardContent}
+              </a>
+            ) : (
+              <article className="service-card service-card-static" key={service.name}>
+                {cardContent}
+              </article>
+            );
+          })}
         </div>
       </section>
 

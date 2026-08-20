@@ -33,7 +33,7 @@ const services = [
     eyebrow: "IMMIGRATION",
     description: "高回报无排期的独立投资移民项目",
     image: "/images/immigration.png",
-    href: "https://usyimin.com/",
+    href: "https://yiminmeiguo.org/",
     alt: "人群跨越地球前往美国的移民主题插画",
   },
   {
